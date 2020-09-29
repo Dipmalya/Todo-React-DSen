@@ -1,0 +1,14 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "rules": {
+        "max-len": [1, 140, 2,
+            {
+                "ignoreComments": true
+            }
+        ]
+    }
+}
