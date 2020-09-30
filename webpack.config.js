@@ -1,6 +1,8 @@
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const configData = require('./src/config/Config.json');
+
 module.exports = {
     "devServer": {
         "port": 5000,
@@ -42,6 +44,9 @@ module.exports = {
         "filename": "bundle.js"
     },
     "plugins": [
+        new webpack.DefinePlugin({
+            CONFIG: JSON.stringify(configData)
+        }),
         new webpack.HotModuleReplacementPlugin(),
         new MiniCssExtractPlugin({
             filename: 'main.css'

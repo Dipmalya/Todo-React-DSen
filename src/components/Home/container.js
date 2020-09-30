@@ -1,8 +1,15 @@
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
 import Home from './index';
 
-const mapStateToProps = {};
+import { addTodoItem } from './action';
 
-const mapDispatchToProps = {};
+const mapStateToProps = ({ todoList }) => ({
+    todoList
+});
 
-export default connect(null, null)(Home);
+const mapDispatchToProps = (dispatch) => ({
+    addTodoItem: bindActionCreators(addTodoItem, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

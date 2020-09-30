@@ -1,0 +1,25 @@
+{
+    "Home": {
+        "heading": "ToDo List",
+        "input": {
+            "todoTextInput": {
+                "name": "todoText",
+                "type": "text",
+                "className": "form-control",
+                "id": "task",
+                "placeholder": "Add todo.."
+            },
+            "todoBtnInput": {
+                "text": "ADD",
+                "className": "btn btn-info ml-3",
+                "iconClassName": "ml-2 fa fa-arrow-right"
+            }
+        },
+        "panelTypes": [
+            "ALL",
+            "ACTIVE",
+            "COMPLETED"
+        ],
+        "emptyPanel": "No items"
+    }
+}

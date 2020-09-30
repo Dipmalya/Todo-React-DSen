@@ -40,10 +40,9 @@
     background: #d4d4d4;
     list-style-type: none;
     font-weight: 400;
-    padding: 0.75rem;
+    padding: 1rem 0.75rem;
     margin: 4px;
     border-radius: 3px;
-    cursor: pointer;
   }
 
 .empty-list {
@@ -51,5 +50,12 @@
     font-size: 18px;
     color: #969696;
     text-align: center;
+}
+
+.item-icon {
+  cursor: pointer;
+  color: #666666;
+  margin: 0 8px;
+  font-size: 22px;
 }
   
