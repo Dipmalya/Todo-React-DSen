@@ -2,6 +2,7 @@ const webpack = require("webpack");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const configData = require('./src/config/Config.json');
+const constant = require('./src/config/Constants.json');
 
 module.exports = {
     "devServer": {
@@ -45,7 +46,8 @@ module.exports = {
     },
     "plugins": [
         new webpack.DefinePlugin({
-            CONFIG: JSON.stringify(configData)
+            CONFIG: JSON.stringify(configData),
+            CONSTANT: JSON.stringify(constant)
         }),
         new webpack.HotModuleReplacementPlugin(),
         new MiniCssExtractPlugin({

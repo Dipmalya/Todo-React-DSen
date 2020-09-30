@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Component Test suite to check component rendering Test to check snapshot of the component is validated 1`] = `
+<div>
+  <div
+    className="bg-dark py-4"
+  >
+    <div
+      className="text-white text-center container"
+    >
+      <h1>
+        ToDo List
+      </h1>
+    </div>
+  </div>
+  <div
+    className="d-flex col-md-4 offset-md-4 mt-md-5 mt-4"
+  >
+    <input
+      className="form-control"
+      id="task"
+      name="todoText"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      placeholder="Add todo.."
+      type="text"
+      value=""
+    />
+    <button
+      className="btn btn-info ml-3"
+      disabled={true}
+      onClick={[Function]}
+    >
+      ADD
+      <i
+        className="ml-2 fa fa-arrow-right"
+      />
+    </button>
+  </div>
+  <div
+    className="col-md-4 offset-md-4 error-text"
+  />
+</div>
+`;

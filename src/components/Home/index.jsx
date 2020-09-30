@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import TodoPanel from "../TodoPanel/container";
 
 const { Home: data } = CONFIG;
+const { ALL, ACTIVE } = CONSTANT;
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
       todoText: '',
-      currentView: "ALL",
+      currentView: ALL,
     };
   }
 
@@ -31,7 +32,7 @@ class Home extends Component {
     const { target: { value } } = event;
     const { input: { error } } = data;
     const { todoList } = this.props;
-    const existingItem = todoList.find(todo => todo.task === value && todo.status === 'ACTIVE') || {};
+    const existingItem = todoList.find(todo => todo.task === value && todo.status === ACTIVE) || {};
     if (existingItem.id) {
       this.setState({ error });
     }

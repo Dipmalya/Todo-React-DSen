@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 const { Home: data } = CONFIG;
+const { ALL, COMPLETED } = CONSTANT;
 
 class TodoPanel extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class TodoPanel extends Component {
 
   static getDerivedStateFromProps(props) {
     const { currentView, todoList } = props;
-    if (currentView === "ALL") {
+    if (currentView === ALL) {
       return {
         list: todoList,
       };
@@ -72,7 +73,7 @@ class TodoPanel extends Component {
                 {task}
                 <span className="float-right">
                   <i 
-                    className={`${status === 'COMPLETED' ? 'text-success' : ''} item-icon fa fa-check-circle`}
+                    className={`${status === COMPLETED ? 'text-success' : ''} item-icon fa fa-check-circle`}
                     onClick={this.onToggleHandler.bind(this, id)}
                   />
                   <i
