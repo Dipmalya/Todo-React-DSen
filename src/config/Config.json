@@ -13,7 +13,8 @@
                 "text": "ADD",
                 "className": "btn btn-info ml-3",
                 "iconClassName": "ml-2 fa fa-arrow-right"
-            }
+            },
+            "error": "Opps! this task is still active"
         },
         "panelTypes": [
             "ALL",

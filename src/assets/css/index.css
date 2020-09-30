@@ -26,7 +26,6 @@
 
 .todo-panel {
   background: #e6e6e6;
-  border-radius: 2px;
   padding: 0.5px;
 }
 
@@ -39,10 +38,10 @@
 .todo-item > li {
     background: #d4d4d4;
     list-style-type: none;
-    font-weight: 400;
+    font-weight: bold;
     padding: 1rem 0.75rem;
     margin: 4px;
-    border-radius: 3px;
+    border-radius: 4px;
   }
 
 .empty-list {
@@ -54,8 +53,14 @@
 
 .item-icon {
   cursor: pointer;
-  color: #666666;
+  color: #b4b4b4;
   margin: 0 8px;
   font-size: 22px;
+}
+
+.error-text {
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
 }
   

@@ -12,6 +12,8 @@ class Home extends Component {
     };
   }
 
+  disableError = () => this.setState({ error: '' });
+
   renderHeader = () => (
     <div className="bg-dark py-4">
       <div className="text-white text-center container">
@@ -25,6 +27,16 @@ class Home extends Component {
     this.setState({ [name]: value });
   }
 
+  handleBlurInput = (event) => {
+    const { target: { value } } = event;
+    const { input: { error } } = data;
+    const { todoList } = this.props;
+    const existingItem = todoList.find(todo => todo.task === value && todo.status === 'ACTIVE') || {};
+    if (existingItem.id) {
+      this.setState({ error });
+    }
+  }
+
   handleAddTodo = () => {
     const { todoText } = this.state;
     this.props.addTodoItem(todoText);
@@ -34,17 +46,19 @@ class Home extends Component {
   renderInput = () => {
     const { input: { todoTextInput, todoBtnInput } } = data;
     const { text: btnText, className, iconClassName } = todoBtnInput;
-    const { todoText } = this.state;
+    const { todoText, error = '' } = this.state;
     return (
       <>
         <input
           value={todoText}
           {...todoTextInput}
+          onFocus={this.disableError}
           onChange={this.handleChangeInput}
+          onBlur={this.handleBlurInput}
         />
         <button 
           className={className}
-          disabled={!todoText}
+          disabled={!todoText || error}
           onClick={this.handleAddTodo}
         >
           {btnText}
@@ -59,14 +73,15 @@ class Home extends Component {
   };
 
   render() {
-    const { currentView } = this.state;
+    const { currentView, error } = this.state;
     const { todoList } = this.props;
     return (
       <div>
         {this.renderHeader()}
-        <div className="d-flex col-md-4 offset-md-4 mt-md-5 mt-4 form-group">
+        <div className="d-flex col-md-4 offset-md-4 mt-md-5 mt-4">
           {this.renderInput()}
         </div>
+        <div className="col-md-4 offset-md-4 error-text">{error}</div>
         <TodoPanel
           todoList={todoList}
           currentView={currentView}
