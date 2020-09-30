@@ -38,6 +38,8 @@ class TodoPanel extends Component {
     this.props.deleteTodo(id);
   }
 
+  onToggleHandler = (id) => this.props.toggleTodo(id);
+
   render() {
     const { currentView } = this.props;
     const { panelTypes, emptyPanel } = data;
@@ -71,6 +73,7 @@ class TodoPanel extends Component {
                 <span className="float-right">
                   <i 
                     className={`${status === 'COMPLETED' ? 'text-success' : ''} item-icon fa fa-check-circle`}
+                    onClick={this.onToggleHandler.bind(this, id)}
                   />
                   <i
                     id={id}

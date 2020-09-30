@@ -7,6 +7,7 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      todoText: '',
       currentView: "ALL",
     };
   }
@@ -19,7 +20,7 @@ class Home extends Component {
     </div>
   );
 
-  handleBlurInput = (event) => {
+  handleChangeInput = (event) => {
     const { target: { name, value } } = event;
     this.setState({ [name]: value });
   }
@@ -39,7 +40,7 @@ class Home extends Component {
         <input
           value={todoText}
           {...todoTextInput}
-          onBlur={this.handleBlurInput}
+          onChange={this.handleChangeInput}
         />
         <button 
           className={className}
