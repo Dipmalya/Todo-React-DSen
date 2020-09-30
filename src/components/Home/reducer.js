@@ -10,11 +10,13 @@ export const todoList = (state = [], {type, payload}) => {
             return state.filter(item => item.id !== payload);
         }
         case TOGGLE_TODO: {
-            const currentItem = state.find(item => item.id === payload);
-            const newState = state.filter(item => item.id !== payload);
-            const { status } = currentItem;
-            currentItem.status = status === 'ACTIVE' ? 'COMPLETED' : 'ACTIVE';
-            return [ ...newState, currentItem ];
+            return state.map(todo => {
+                const { status: currentStatus } = todo;
+                return (
+                    todo.id === payload ? 
+                    { ...todo, status: currentStatus === 'ACTIVE' ? 'COMPLETED' : 'ACTIVE' } : todo
+                )
+            });
         }
     }
     return state;
