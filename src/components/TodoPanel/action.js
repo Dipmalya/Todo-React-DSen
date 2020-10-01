@@ -1,5 +1,9 @@
 import { DELETE_TODO, TOGGLE_TODO } from '../../config/actionTypes';
 
+/**
+ * Method to delete todo
+ * @param {todoId} value 
+ */
 export const deleteTodo = value => {
     return (dispatch) => {
         dispatch(deleteTodoDispatcher(value))
@@ -11,6 +15,10 @@ const deleteTodoDispatcher = (value) => ({
     payload: value
 });
 
+/**
+ * Method to toggle todo from active to complete
+ * @param {todoId} value 
+ */
 export const toggleTodo = (id) => {
     return (dispatch) => {
         dispatch(toggleTodoDispatcher(id))

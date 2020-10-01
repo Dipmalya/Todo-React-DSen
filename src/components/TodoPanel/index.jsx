@@ -25,6 +25,10 @@ class TodoPanel extends Component {
     }
   }
 
+  /**
+   * Method to toggle todo panel
+   * @param {event} object
+   */
   onClickHandler = (event) => {
     const {
       target: { id },
@@ -32,13 +36,21 @@ class TodoPanel extends Component {
     this.props.toggleView(id);
   };
 
+  /**
+   * Method to remove todo item
+   * @param {event} object
+   */
   onRemoveHandler = (event) => {
     const {
       target: { id },
     } = event;
     this.props.deleteTodo(id);
-  }
+  };
 
+  /**
+   * Method to toggle todo
+   * @param {event} object
+   */
   onToggleHandler = (id) => this.props.toggleTodo(id);
 
   render() {
@@ -72,8 +84,10 @@ class TodoPanel extends Component {
               <li key={uuidv4()}>
                 {task}
                 <span className="float-right">
-                  <i 
-                    className={`${status === COMPLETED ? 'text-success' : ''} item-icon fa fa-check-circle`}
+                  <i
+                    className={`${
+                      status === COMPLETED ? "text-success" : ""
+                    } item-icon fa fa-check-circle`}
                     onClick={this.onToggleHandler.bind(this, id)}
                   />
                   <i

@@ -15,6 +15,9 @@ class Home extends Component {
 
   disableError = () => this.setState({ error: '' });
 
+  /**
+   * Method to render Header
+   */
   renderHeader = () => (
     <div className="bg-dark py-4">
       <div className="text-white text-center container">
@@ -23,11 +26,19 @@ class Home extends Component {
     </div>
   );
 
+  /**
+   * @param {event} object
+   * Method to onChange event of textbox
+   */
   handleChangeInput = (event) => {
     const { target: { name, value } } = event;
     this.setState({ [name]: value });
   }
 
+  /**
+   * @param {event} object
+   * Method to onBlur event of textbox
+   */
   handleBlurInput = (event) => {
     const { target: { value } } = event;
     const { input: { error } } = data;
@@ -38,12 +49,21 @@ class Home extends Component {
     }
   }
 
+  /**
+   * @param {event} object
+   * Method to onClick event of add button
+   */
   handleAddTodo = () => {
     const { todoText } = this.state;
     this.props.addTodoItem(todoText);
     this.setState({ todoText: '' });
   }
 
+  /**
+   * Method to render Input components
+   * i. Input 
+   * ii. Button
+   */
   renderInput = () => {
     const { input: { todoTextInput, todoBtnInput } } = data;
     const { text: btnText, className, iconClassName } = todoBtnInput;
@@ -69,6 +89,10 @@ class Home extends Component {
     );
   };
 
+  /**
+   * @param {event} object
+   * Method to handle toggling of nav panel
+   */
   handleViewToggle = (value) => {
     this.setState({ currentView: value });
   };

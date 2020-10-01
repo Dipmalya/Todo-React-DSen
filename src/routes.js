@@ -4,6 +4,9 @@ import * as Pages from './components/containers';
 
 const routes = require('./config/routes.json');
 
+/**
+ * Route component to display components dynamically on each route
+ */
 class Routes extends Component { 
     route = ({ component, path }) => {
         const RouteComponent = Pages[component];
