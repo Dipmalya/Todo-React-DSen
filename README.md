@@ -14,3 +14,7 @@ Jest Unit test cases with coverage
 83.33% Branches
 95.12% Functions
 95.1% Lines
+
+Command to run:
+"npm run dev"
+
