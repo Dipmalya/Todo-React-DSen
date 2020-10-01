@@ -8,7 +8,7 @@ const mockStore = configureStore(middlewares);
 const store = mockStore({});
 
 describe('Home Action', () => {
-    it('Test to check Todo action is dispatched', () => {
+    it('Test to check add Todo action is dispatched', () => {
         const text = 'Code'
         const expectedAction = {
             type: 'ADD_TODO',

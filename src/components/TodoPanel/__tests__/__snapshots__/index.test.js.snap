@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoPanel Component Test suite to check component rendering Test to check snapshot of the component is validated 1`] = `
+<div
+  className="col-md-7 offset-md-2 mt-5"
+>
+  <ul
+    className="nav-list"
+  >
+    <li
+      className="selected-nav"
+      id="ALL"
+      onClick={[Function]}
+    >
+      ALL
+    </li>
+    <li
+      className=""
+      id="ACTIVE"
+      onClick={[Function]}
+    >
+      ACTIVE
+    </li>
+    <li
+      className=""
+      id="COMPLETED"
+      onClick={[Function]}
+    >
+      COMPLETED
+    </li>
+  </ul>
+  <div
+    className="todo-panel"
+  >
+    <ol
+      className="todo-item"
+    >
+      <li>
+        Do next
+        <span
+          className="float-right"
+        >
+          <i
+            className=" item-icon fa fa-check-circle"
+            onClick={[Function]}
+          />
+          <i
+            className="item-icon text-danger fa fa-trash"
+            id="bda37a11-6a12-40ec-9365-331a516194ea"
+            onClick={[Function]}
+          />
+        </span>
+      </li>
+      <li>
+        Do nothing
+        <span
+          className="float-right"
+        >
+          <i
+            className="text-success item-icon fa fa-check-circle"
+            onClick={[Function]}
+          />
+          <i
+            className="item-icon text-danger fa fa-trash"
+            id="bda37a11-6a12-40ec-9365-331a516194ea"
+            onClick={[Function]}
+          />
+        </span>
+      </li>
+    </ol>
+  </div>
+</div>
+`;

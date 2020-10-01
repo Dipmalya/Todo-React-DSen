@@ -7,19 +7,25 @@ import rootReducer from './components/reducers';
 
 const logger = createLogger();
 let store = {};
+let instance = null;
 
-if(process.env.NODE_ENV === 'development') {
-    store = createStore(
-        rootReducer,
-        composeWithDevTools(applyMiddleware(thunk, logger))
-    );
-}
-else if(process.env.NODE_ENV === 'production') {
-    store = createStore(
-        rootReducer,
-        applyMiddleware(thunk)
-    );
+const middlewareConnector = () => {
+    if(process.env.NODE_ENV === 'development') {
+        store = createStore(
+            rootReducer,
+            composeWithDevTools(applyMiddleware(thunk, logger))
+        );
+    }
+    return composeWithDevTools(applyMiddleware(thunk))
 }
 
-export default store;
-
+export default function configureStore(initialStore) {
+    if(!instance) {
+        instance = createStore(
+            rootReducer,
+            initialStore,
+            middlewareConnector()
+        )
+    }
+    return instance;
+}
